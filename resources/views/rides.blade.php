@@ -9,19 +9,19 @@
 
 				<div class="panel-body">
 
-@if (session('success')) : ?>
+@if (session('success'))
 	<p>Review was successfully added.</p>
 @endif
- <?php //echo count($errors) ?>
-<?php if (count($errors) > 0) : ?>
+@if (count($errors) > 0)
     <ul>
-        <?php foreach ($errors->all() as $error) : ?>
+        @foreach ($errors->all() as $error)
             <li>
-                <?php echo $error ?>
+                {{ $error }}
             </li>
-        <?php endforeach ?>
+        @endforeach
     </ul>
-<?php endif ?>
+@endif
+
 <div class="row">
 
 	<form action="{{ url('/trips/search') }}" method="get">
